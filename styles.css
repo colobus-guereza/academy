@@ -1,0 +1,468 @@
+:root {
+    --main-bg-color: #ffffff;
+    --main-text-color: #333333;
+    --button-bg-gradient-from: #4dabf7;
+    --button-bg-gradient-to: #3b8fd7;
+    --button-text-color: #ffffff;
+    --divider-color: rgba(51, 154, 240, 0.3);
+    --accent-gradient-from: #339af0;
+    --accent-gradient-to: #2884d8;
+    --accent-color: #339af0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'SUIT', sans-serif;
+    color: var(--main-text-color);
+    line-height: 1.5;
+    background-color: var(--main-bg-color);
+    background-repeat: repeat;
+    transition: background-color 1s ease, color 1s ease;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    padding: 16px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 450px;
+    padding-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    height: 95vh;
+    max-height: 800px;
+    transition: opacity 0.3s ease;
+}
+
+header {
+    text-align: center;
+    padding: 10px 0 5px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 0.65rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    opacity: 0.85;
+    -webkit-text-size-adjust: 100%; /* iOS Safari에서 자동 텍스트 크기 조정 방지 */
+}
+
+h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    margin: 20px 0;
+    position: relative;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--divider-color) 30%, 
+        var(--divider-color) 70%, 
+        transparent 100%) !important;
+}
+
+.divider::before {
+    display: none;
+}
+
+.divider::after {
+    display: none;
+}
+
+.top-section, .middle-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+.button-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 14px 5px;
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: var(--button-text-color);
+    min-height: 44px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transition: left 0.5s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+.main-btn, .contact-btn, footer p {
+    opacity: 0.85;
+}
+
+.instructors-btn {
+    opacity: 0.92;
+}
+
+.location-btn {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.middle-section h2 {
+    opacity: 1;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+footer {
+    margin-top: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* 더 큰 화면을 위한 미디어 쿼리 */
+@media (min-width: 360px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    button {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 412px) {
+    .container {
+        padding: 20px;
+    }
+    
+    button {
+        font-size: 1.1rem;
+        padding: 15px 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .content-wrapper {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    button {
+        padding: 12px 5px;
+        font-size: 0.85rem;
+    }
+}
+
+/* 테마 관련 클래스 정리 - 기존 많은 테마 클래스 대신 두 가지만 사용 */
+.theme-day {
+    --main-bg-color: #ffffff;
+    --main-text-color: #333333;
+    --button-bg-gradient-from: #4dabf7;
+    --button-bg-gradient-to: #3b8fd7;
+    --button-text-color: #ffffff;
+    --divider-color: rgba(51, 154, 240, 0.3);
+    --accent-gradient-from: #339af0;
+    --accent-gradient-to: #2884d8;
+    --accent-color: #339af0;
+}
+
+.theme-night {
+    --main-bg-color: #2a2a2a;
+    --main-text-color: #e0e0e0;
+    --button-bg-gradient-from: #3d3d3d;
+    --button-bg-gradient-to: #2d2d2d;
+    --button-text-color: #ffffff;
+    --divider-color: rgba(255, 255, 255, 0.15);
+    --accent-gradient-from: #505050;
+    --accent-gradient-to: #404040;
+    --accent-color: #505050;
+}
+
+/* 테마별 버튼 스타일 - 많은 테마 대신 두 가지만 정의 */
+.theme-day button {
+    background: linear-gradient(135deg, var(--button-bg-gradient-from), var(--button-bg-gradient-to));
+    color: var(--button-text-color);
+}
+
+.theme-night button {
+    background: linear-gradient(135deg, var(--button-bg-gradient-from), var(--button-bg-gradient-to));
+    color: var(--button-text-color);
+}
+
+.theme-day button:hover {
+    background: linear-gradient(135deg, #3b8fd7, #2884d8);
+}
+
+.theme-night button:hover {
+    background: linear-gradient(135deg, #2d2d2d, #222222);
+}
+
+/* 버튼 텍스트 가시성 보장 */
+.main-btn, .contact-btn, .location-btn, .instructor-btn, .secondary-btn {
+    color: var(--button-text-color, #fff) !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+}
+
+/* 구분선 스타일 */
+.divider {
+    width: 100%;
+    height: 1px;
+    margin: 20px 0;
+    position: relative;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--divider-color) 30%, 
+        var(--divider-color) 70%, 
+        transparent 100%) !important;
+}
+
+/* 버튼 컨테이너 스타일 */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* 인스타그램 버튼 스타일 */
+.instagram-btn {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    width: 100%;
+    max-width: 130px;
+    height: 48px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 500;
+}
+
+.instagram-btn::before {
+    display: none;
+}
+
+/* 이헌국 선생님 페이지 빈 버튼 */
+.empty-btn {
+    background: transparent;
+    border: none;
+    width: 100%;
+    max-width: 130px;
+    height: 48px;
+    box-shadow: none;
+}
+
+.empty-btn:hover {
+    background: transparent;
+}
+
+/* 새로운 버튼 스타일 */
+.secondary-btn {
+    background: linear-gradient(135deg, #74c0fc, #4dabf7);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 0;
+    display: block;
+}
+
+.secondary-btn:hover {
+    background: linear-gradient(135deg, #4dabf7, #339af0);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 강사 소개 버튼 스타일 */
+.instructor-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.instructor-btn {
+    background: linear-gradient(135deg, var(--accent-gradient-from), var(--accent-gradient-to));
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 0.95rem;
+}
+
+/* 다가오는 수업 버튼 레이아웃 수정 */
+.middle-section .button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+}
+
+/* 아카데미 소개 텍스트 사이즈 축소 */
+.page-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* 강사 프로필 페이지 스타일 */
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    align-self: center;
+    margin-left: 0;
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.profile-info {
+    width: 100%;
+    text-align: left;
+    padding: 0 15px;
+}
+
+.profile-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.profile-info p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.profile-info .contact-btn {
+    margin-top: 0;
+    width: 100%;
+    max-width: 130px;
+}
+
+/* 유튜브 동영상 영역 스타일 */
+.profile-video {
+    width: calc(100% - 30px);
+    margin: 0 15px 10px 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 모바일에서 버튼 텍스트 강제 표시 */
+@media screen and (max-width: 480px) {
+    .main-btn, .contact-btn, .location-btn, .instructor-btn, .secondary-btn {
+        color: #ffffff !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}

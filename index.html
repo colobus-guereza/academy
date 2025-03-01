@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SND 핸드팬 아카데미</title>
+
+    <!-- 기본 파비콘 -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- 다양한 크기의 아이콘 -->
+    <link rel="icon" type="image/png" href="images/favicon-16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192">
+
+    <!-- Microsoft 타일 아이콘 -->
+    <meta name="msapplication-TileImage" content="images/ms-icon-310x310.png">
+    <meta name="msapplication-TileColor" content="#4dabf7">
+
+    <!-- 애플 터치 아이콘 -->
+    <link rel="apple-touch-icon" href="images/ms-icon-310x310.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/ms-icon-310x310.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/ms-icon-310x310.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="images/ms-icon-310x310.png">
+
+    <!-- 웹 앱 매니페스트 -->
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2" rel="stylesheet"
+        type="text/css">
+    <style>
+        @font-face {
+            font-family: 'SUIT';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'SUIT', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-wrapper" id="main-content">
+            <header>
+                <h2>SND 핸드팬 아카데미</h2>
+            </header>
+
+            <section class="top-section">
+                <div class="button-grid">
+                    <button class="main-btn" onclick="showPage('academy')">아카데미 소개</button>
+                    <button class="main-btn" onclick="showPage('instructors')">강사 & 지점 소개</button>
+                    <a href="tel:010-8967-9204" class="btn-link">
+                        <button class="contact-btn">전화문의</button>
+                    </a>
+                    <a href="http://qr.kakao.com/talk/eaCVDVzuz5Z7kqRWulpewF1ix7M-" class="btn-link">
+                        <button class="contact-btn">카톡상담</button>
+                    </a>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="middle-section">
+                <h2>수업신청</h2>
+                <div class="button-grid">
+                    <a href="https://forms.gle/4Fcb5S3KtwKYYejA9" class="btn-link">
+                        <button class="location-btn">[홍대] 3/2, 16(일)<br>입문/수련 그룹수업</button>
+                    </a>
+                    <a href="https://form.naver.com/response/7lqig2GoTHXaR62C7tCz4Q" class="btn-link">
+                        <button class="location-btn">[전주] 3/15(토)<br>핸드팬 워크샵</button>
+                    </a>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="bottom-section">
+                <div class="button-grid">
+                    <button class="secondary-btn" onclick="alert('준비 중입니다.')">자료 모음</button>
+                </div>
+            </section>
+
+            <footer>
+                <p>이 페이지를 '홈 화면'에 추가하실 수 있습니다 :)</p>
+            </footer>
+        </div>
+
+        <!-- 아카데미 소개 페이지 콘텐츠 -->
+        <div class="content-wrapper page-content-wrapper" id="academy-content" style="display: none;">
+            <button class="back-btn" onclick="showPage('main')">뒤로가기</button>
+
+            <header>
+                <h2 class="page-title">SND 핸드팬 아카데미는</h2>
+            </header>
+
+            <div class="page-content">
+                <p>한국 핸드팬 브랜드 Snd Handpan이 직접 운영하는 '핸드팬 즉흥연주 교육기관'으로, 핸드팬을 향한 한국인들의 관심이 늘어나는 시점에 발 맞춰 2019년 정식 개원하였습니다.
+                </p>
+                <br>
+                <p>아카데미는 [입문자 → 수련자 → 연주자 → 안내자] 각자의 실력에 맞는 교육을 제공하고 훈련시켜 드리며, 다양한 악기를 연주하는 선생님과 함께 호흡하며 홀로 키우기 어려운 음악
+                    실력과 감각을 전수 해드립니다.</p>
+                <br>
+                <button class="secondary-btn" onclick="alert('준비 중입니다.')">핸드팬 강사 자격과정</button>
+            </div>
+        </div>
+
+        <!-- 강사 & 지점 소개 페이지 콘텐츠 -->
+        <div class="content-wrapper page-content-wrapper" id="instructors-content" style="display: none;">
+            <button class="back-btn" onclick="showPage('main')">뒤로가기</button>
+
+            <div class="instructor-buttons">
+                <button class="instructor-btn" onclick="showPage('heonkook-profile')">[원장] 이헌국 선생님</button>
+                <button class="instructor-btn" onclick="showPage('jieun-profile')">[서대문] 음악치료사 이지은 선생님</button>
+                <button class="instructor-btn" onclick="showPage('sion-profile')">[건대] 명상음악가 시온 선생님</button>
+            </div>
+        </div>
+
+        <!-- 이지은 선생님 프로필 페이지 -->
+        <div class="content-wrapper page-content-wrapper" id="jieun-profile-content" style="display: none;">
+            <button class="back-btn" onclick="showPage('instructors')">뒤로가기</button>
+
+            <div class="profile-content">
+                <div class="profile-image">
+                    <img src="images/jieun.jpg" alt="이지은 선생님" />
+                </div>
+                <div class="profile-info">
+                    <h2>이지은 선생님</h2>
+                    <p>음악치료사</p>
+                    <p>1:1, 소규모 그룹레슨</p>
+                    <p>핸드팬을 통해 일상에서 쉽게 접근할 수 있는 즉흥연주와 명상적 음악 세계로 안내합니다.</p>
+                    <p>주소: 서울 서대문구 충정로6안길 27 2층 1호실</p>
+                    <div class="button-container">
+                        <a href="tel:010-4529-9038" class="btn-link">
+                            <button class="contact-btn">문의전화</button>
+                        </a>
+                        <a href="https://www.instagram.com/warmwaves_therapy/" class="btn-link" target="_blank">
+                            <button class="instagram-btn">인스타그램</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 시온 선생님 프로필 페이지 -->
+        <div class="content-wrapper page-content-wrapper" id="sion-profile-content" style="display: none;">
+            <button class="back-btn" onclick="showPage('instructors')">뒤로가기</button>
+
+            <div class="profile-content">
+                <div class="profile-image">
+                    <img src="images/sion.jpg" alt="시온 선생님" />
+                </div>
+                <div class="profile-info">
+                    <h2>시온 선생님</h2>
+                    <p>명상음악가</p>
+                    <p>1:1, 소규모 그룹레슨</p>
+                    <p>명상적인 접근으로 핸드팬의 깊은 울림을 통해 음악과 내면의 연결을 도와드립니다.</p>
+                    <p>주소: 서울 광진구 뚝섬로 508-4 2층</p>
+                    <div class="button-container">
+                        <a href="tel:010-9889-4484" class="btn-link">
+                            <button class="contact-btn">문의전화</button>
+                        </a>
+                        <a href="https://www.instagram.com/sionlee44/" class="btn-link" target="_blank">
+                            <button class="instagram-btn">인스타그램</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 이헌국 선생님 프로필 페이지 -->
+        <div class="content-wrapper page-content-wrapper" id="heonkook-profile-content" style="display: none;">
+            <button class="back-btn" onclick="showPage('instructors')">뒤로가기</button>
+
+            <div class="profile-content">
+                <div class="profile-video">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/v4llwM45d2s" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="profile-info">
+                    <h2>이헌국 선생님</h2>
+                    <p>소리명상 & 즉흥연주 교육자</p>
+                    <p>1:1, 그룹레슨, 대중강연</p>
+                    <p>자연스러운 즉흥연주와 음악성을 키울 수 있는 지도를 제공합니다.</p>
+                    <div class="button-container">
+                        <a href="tel:010-8967-9204" class="btn-link">
+                            <button class="contact-btn">문의전화</button>
+                        </a>
+                        <button class="empty-btn"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
