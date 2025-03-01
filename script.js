@@ -8,12 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // 밤(18시-11시): 어두운 테마
         const isDay = hour >= 12 && hour < 18;
 
-        // 기존 테마 클래스 모두 제거
-        document.body.classList.remove('theme-day', 'theme-night');
-
-        // 새 테마 적용
+        // CSS 변수 직접 설정으로 신뢰성 확보
         if (isDay) {
-            document.body.classList.add('theme-day');
+            // 낮 테마 설정
+            document.body.style.backgroundColor = '#ffffff';
+            document.body.style.color = '#333333';
             document.documentElement.style.setProperty('--main-bg-color', '#ffffff');
             document.documentElement.style.setProperty('--main-text-color', '#333333');
             document.documentElement.style.setProperty('--button-bg-gradient-from', '#4dabf7');
@@ -24,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
             document.documentElement.style.setProperty('--accent-gradient-to', '#2884d8');
             document.documentElement.style.setProperty('--accent-color', '#339af0');
         } else {
-            document.body.classList.add('theme-night');
+            // 밤 테마 설정
+            document.body.style.backgroundColor = '#2a2a2a';
+            document.body.style.color = '#e0e0e0';
             document.documentElement.style.setProperty('--main-bg-color', '#2a2a2a');
             document.documentElement.style.setProperty('--main-text-color', '#e0e0e0');
             document.documentElement.style.setProperty('--button-bg-gradient-from', '#3d3d3d');
@@ -35,12 +36,21 @@ document.addEventListener('DOMContentLoaded', function () {
             document.documentElement.style.setProperty('--accent-gradient-to', '#404040');
             document.documentElement.style.setProperty('--accent-color', '#505050');
         }
+
+        // 기존 테마 클래스 모두 제거
+        document.body.classList.remove('theme-day', 'theme-night');
+
+        // 새 테마 클래스 추가
+        document.body.classList.add(isDay ? 'theme-day' : 'theme-night');
     }
 
-    // 페이지 로드 시 테마 설정
+    // 즉시 테마 설정 실행 (DOM 로드 즉시)
     updateTheme();
 
-    // 1분마다 테마 업데이트 (시간이 바뀌는 경우를 대비)
+    // 한 번 더 지연 실행하여 다른 스크립트의 간섭 방지
+    setTimeout(updateTheme, 100);
+
+    // 1분마다 테마 업데이트
     setInterval(updateTheme, 60000);
 });
 

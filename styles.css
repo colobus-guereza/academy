@@ -126,13 +126,13 @@ button {
     border: none;
     border-radius: 10px;
     padding: 14px 5px;
-    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    font-family: 'SUIT', sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
-    color: var(--button-text-color);
+    color: var(--button-text-color) !important;
     min-height: 44px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -284,8 +284,9 @@ footer p {
 /* 버튼 텍스트 가시성 보장 */
 .main-btn, .contact-btn, .location-btn, .instructor-btn, .secondary-btn {
     color: var(--button-text-color, #fff) !important;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    font-weight: 500;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    opacity: 1 !important;
 }
 
 /* 구분선 스타일 */
@@ -304,10 +305,20 @@ footer p {
 /* 버튼 컨테이너 스타일 */
 .button-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
     margin-top: 15px;
     width: 100%;
+}
+
+.button-container .btn-link {
+    flex: 1;
+}
+
+.button-container .contact-btn, 
+.button-container .instagram-btn {
+    width: 100%;
+    max-width: none;
 }
 
 /* 인스타그램 버튼 스타일 */
@@ -465,4 +476,31 @@ footer p {
         opacity: 1 !important;
         visibility: visible !important;
     }
+}
+
+/* 전화문의/카톡상담 버튼 레이아웃 수정 */
+.top-section .button-grid .btn-link {
+    width: 100%; /* 전체 너비 차지 */
+}
+
+.top-section .contact-btn {
+    width: 100%; /* 부모 요소의 전체 너비 차지 */
+}
+
+/* 수업신청 버튼 레이아웃 수정 */
+.middle-section .button-grid .btn-link {
+    width: 100%;
+}
+
+.middle-section .location-btn {
+    width: 100%; /* 버튼 너비 통일 */
+}
+
+/* 뒤로가기 버튼 크기 및 위치 수정 */
+.back-btn {
+    width: 33%; /* 1/3 크기로 조정 */
+    margin-right: auto; /* 좌측 정렬 */
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--button-bg-gradient-from), var(--button-bg-gradient-to));
+    color: var(--button-text-color);
 }
